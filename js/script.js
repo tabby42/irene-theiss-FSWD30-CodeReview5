@@ -1,24 +1,24 @@
 var container = $(".img-container");
-var toAppend = "";
 var members = data["Members"];
-var likeBtn = $("button.white");
+var likeBtn = $("button.like-btn");
 var sortBtn = $(".sort-btn");
 
 //member template
 function template (id, imgSrc, firstName, lastName, age, performers, likes) {
 	var tpl = "<figure class='flex-1 flex-row flex-start' data-id='" + id + "'>";
 		tpl += "<img src='" + imgSrc + "' alt='Memmber Photo'>";
-		tpl += "<figcaption>";
+		tpl += "<figcaption class='flex-figure'>";
 		tpl += "<h3>" + firstName + " " + lastName + "</h3>";
 		tpl += "<p><b>Age: </b>" + age + "</p>";
 		tpl += "<p><b>Favorite Performers:<br></b>" + performers + "</p>";
-		tpl += "<p><b>Likes </b><span class='likes'>" + likes + "</span><button type='button' class='white'><i class='fas fa-heart fa-lg'></i></button></p>";
+		tpl += "<p><b>Likes </b><span class='likes'>" + likes + "</span><button type='button' class='white like-btn'><i class='fas fa-heart fa-sm'></i></button></p>";
 		tpl += "</figcaption></figure>";	
 	return $(tpl);
 }
 
 //append members 
 function appendMembers(arr) {
+	var toAppend = "";
 	for (var i = 0; i < arr.length; i++) {
 		toAppend = template(arr[i].id, arr[i].myPhoto, arr[i].name, arr[i].surname, arr[i].age, arr[i].favoritePerformers.join("<br>"), arr[i].likes);
 		container.append(toAppend);
@@ -26,7 +26,7 @@ function appendMembers(arr) {
 }
 appendMembers(members);
 
-//like-button --> increase likes on click 
+//like-button 
 container.on("click", likeBtn, function(e) {
 	var fig = e.target.closest("figure");
 	var id = $(fig).attr("data-id");
@@ -50,9 +50,9 @@ function sortMembersByLike () {
 }
 
 //sort-button
-sortBtn.on("click", sortBtn, function () {
-	$(".img-container figure").detach();
+sortBtn.on("click", function () {
 	var sorted = sortMembersByLike();
+	$(".img-container figure").detach();
 	appendMembers(sorted);
 });
 

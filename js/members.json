@@ -6,7 +6,7 @@ var data = {
         "favoritePerformers": ["Justin Timberlake", "Ed Sheeran", "Emma Watson"],
         "age": 25,
         "myPhoto": "img/boy1.800x1000.jpg",  
-        "likes": 20
+        "likes": 10
     }, {
         "id": 102,
         "name": "Mary",
@@ -22,7 +22,7 @@ var data = {
         "favoritePerformers": ["Fiva MC", "Alice Phoebe Lou", "River Phoenix"],
         "age": 22,
         "myPhoto": "img/boy2.800x1000.jpg",  
-        "likes": 15
+        "likes":21
     }, {
         "id": 104,
         "name": "Julie",
