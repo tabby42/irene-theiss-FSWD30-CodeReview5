@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 	//member template
 	function template (id, imgSrc, firstName, lastName, age, performers, likes) {
 		var tpl = "<figure class='flex-1 flex-row flex-start' data-id='" + id + "'>";
-			tpl += "<img src='" + imgSrc + "' alt='Memmber Photo'>";
+			tpl += "<img src='" + imgSrc + "' alt='Member Photo'>";
 			tpl += "<figcaption class='flex-figure'>";
 			tpl += "<h3>" + firstName + " " + lastName + "</h3>";
 			tpl += "<p><b>Age </b>" + age + "</p>";
