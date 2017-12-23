@@ -3,7 +3,7 @@ var data = {
         "id": 101,
         "name": "John",
         "surname": "Doe",
-        "favoritePerformers": ["Justin Timberlake", "Ed Sheeran", "Emma Watson"],
+        "favoritePerformers": ["Sugar Pie DeSanto", "Keith Jarrett", "Angela Troendle"],
         "age": 25,
         "myPhoto": "img/boy1.800x1000.jpg",  
         "likes": 10
