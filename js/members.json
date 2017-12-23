@@ -1,0 +1,31 @@
+var data = {
+    "Members": [{
+        "name": "John",
+        "surname": "Doe",
+        "favoritePerformers": ["Justin Timberlake", "Ed Sheeran", "Emma Watson"],
+        "age": 25,
+        "myPhoto": "img/boy1.800x1000.jpg",  
+        "likes": 0
+    }, {
+        "name": "Mary",
+        "surname": "Member",
+        "favoritePerformers": ["LP", "Brad Mehldau", "Alan Rickman"],
+        "age": 29,
+        "myPhoto": "img/girl1.800x1000.jpg",  
+        "likes": 0
+    }, {
+        "name": "Max",
+        "surname": "Mistletoe",
+        "favoritePerformers": ["Fiva MC", "Alice Phoebe Lou", "River Phoenix"],
+        "age": 22,
+        "myPhoto": "img/boy2.800x1000.jpg",  
+        "likes": 0
+    }, {
+        "name": "Julie",
+        "surname": "Doe",
+        "favoritePerformers": ["Nina Simone", "Bad Religion", "Propagandhi"],
+        "age": 26,
+        "myPhoto": "img/girl2.800x1000.jpg",  
+        "likes": 0
+    }]
+}
