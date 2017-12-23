@@ -146,10 +146,16 @@ main {
 	}
 }
 
-.img-container {
+.container {
 	width: 80%;
     margin: 0 auto;
-    padding: 50px 0;
+    .sort-btn {
+    	margin: 10px;
+    }
+}
+
+.img-container {
+	padding: 50px 0;
 	figure {
 		border: 2px dotted $pink;
 		margin: 10px;
@@ -163,9 +169,25 @@ main {
 		    h3 {
 	    	    margin: 0;
     			font-weight: normal;
+			    margin-top: -10px;
 		    }
 		    p {
 		    	margin: 7px;
+		    	button {
+		    		cursor: pointer;
+		    		background-color: $pink;
+		    		border: 0;
+		    		float: right;
+	    		    border-radius: 100%;
+    				padding: 7px 6px;
+    				-webkit-transition: all 0.6s ease;
+    				transition: all 0.6s ease;
+    				outline: 0;
+    				&:hover, &:focus {
+    					-webkit-transform: scale(1.1);
+    					        transform: scale(1.1);
+    				}
+		    	}
 		    }
 		}
 	}
