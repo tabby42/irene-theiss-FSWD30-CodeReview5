@@ -1,12 +1,12 @@
 jQuery(document).ready(function($) {
 	//variables
-	var container = $(".img-container");
-	var members = data["Members"];
-	var likeBtn = $("button.like-btn");
-	var sortBtn = $(".sort-btn");
+	var container = $(".img-container"),
+		members = data["Members"],
+		likeBtn = $("button.like-btn"),
+		sortBtn = $(".sort-btn");
 
 	//member template
-	// HTML template to be filled with data from members.json
+	//HTML template to be filled with data from members.json
 	function template (id, imgSrc, firstName, lastName, age, performers, likes) {
 		var tpl = "<figure class='flex-1 flex-row flex-start' data-id='" + id + "'>";
 			tpl += "<img src='" + imgSrc + "' alt='Member Photo'>";
@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
 	function appendMembers(arr) {
 		var toAppend = "";
 		//loop through all members, call template-function on each iteration
-		//and append to container-element
+		//fill with data and append to container-element
 		for (var i = 0; i < arr.length; i++) {
 			toAppend = template(arr[i].id, arr[i].myPhoto, arr[i].name, arr[i].surname, arr[i].age, arr[i].favoritePerformers.join("<br>"), arr[i].likes);
 			container.append(toAppend);
@@ -41,12 +41,13 @@ jQuery(document).ready(function($) {
 	container.on("click", likeBtn, function(e) {
 		//find enclosing figure ...
 		var fig = e.target.closest("figure");
-		//... to get value of data-id attribute
+		//... to get value of data-id attribute of clicked member
+		// so we know which member has been clicked
 		var id = $(fig).attr("data-id");
-		//store HTML element for displaying likes for use in loop
+		//store HTML element for displaying this members's likes for use in loop
 		var likesEl = $(fig).find(".likes");
 		//loop through all members, find the one matching the current data id value
-		//and increase its like property, then update likes display accordingly
+		//and increase its like property by 1, then update likes display accordingly
 		for (var i = 0; i < members.length; i++) {
 			if (parseInt(members[i].id) === parseInt(id)) {
 				members[i].likes ++;
@@ -61,6 +62,7 @@ jQuery(document).ready(function($) {
 		var sorted = members.sort(function(a, b) { 
 		    return a.likes - b.likes;
 		});
+		//return descending order
 		return sorted.reverse();
 	}
 
