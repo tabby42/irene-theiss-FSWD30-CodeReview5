@@ -35,7 +35,7 @@ jQuery(document).ready(function($) {
 	//event delegation is needed for dynamically added elements -->
 	//--> likeBtn.on("click", ...) won't work
 	//https://learn.jquery.com/events/event-delegation/ -->
-	//Event delegation allows us to attach a single event listener
+	//--> Event delegation allows us to attach a single event listener
 	//to a parent element, that will fire for all descendants matching a selector, 
 	//whether those descendants exist now or are added in the future.
 	container.on("click", likeBtn, function(e) {
@@ -71,7 +71,7 @@ jQuery(document).ready(function($) {
 		var sorted = sortMembersByLike();
 		//remove all members from page ...
 		$(".img-container figure").detach();
-		//.. and append them again in sorted form
+		//... and append them again in sorted form
 		appendMembers(sorted);
 	});
 });
