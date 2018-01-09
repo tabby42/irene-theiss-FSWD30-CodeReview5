@@ -60,10 +60,9 @@ jQuery(document).ready(function($) {
 	//sort members
 	function sortMembersByLike () {
 		var sorted = members.sort(function(a, b) { 
-		    return a.likes - b.likes;
+		    return b.likes - a.likes;
 		});
-		//return descending order
-		return sorted.reverse();
+		return sorted;
 	}
 
 	//sort-button
